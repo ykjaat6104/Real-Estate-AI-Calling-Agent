@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Real Estate Sales Assistant</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <span class="logo">🏢</span>
+            <div>
+                <h1>Real Estate AI Agent</h1>
+                <p class="subtitle">Bilingual Voice Sales Assistant</p>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="/dashboard">Dashboard</a>
+            <button id="logoutBtn" class="btn small ghost">Logout</button>
+        </nav>
+    </header>
+
+    <main class="layout">
+        <!-- Caller panel -->
+        <section class="panel caller-panel">
+            <div class="status-bar">
+                <span id="statusDot" class="dot idle"></span>
+                <span id="statusText">Ready to start</span>
+            </div>
+
+            <div class="actions">
+                <button id="startBtn" class="btn primary">📞 Start Call</button>
+                <button id="endBtn" class="btn danger" disabled>End Call</button>
+            </div>
+
+            <div class="mic-check">
+                <label for="micSel">Microphone</label>
+                <select id="micSel"></select>
+            </div>
+
+            <div class="project-select">
+                <label for="projectSel">Project</label>
+                <select id="projectSel">
+                    <option value="">Loading projects...</option>
+                </select>
+            </div>
+
+            <p class="hint">
+                Speak in <strong>Hindi, Hinglish or English</strong> — the agent will match your
+                language. You can interrupt her anytime.
+            </p>
+
+            <div id="transcript" class="transcript">
+                <div class="placeholder">Conversation will appear here...</div>
+            </div>
+        </section>
+
+        <!-- Live requirements panel -->
+        <aside class="panel live-panel">
+            <h2>Live Requirements <span id="liveState" class="live-badge">waiting</span></h2>
+            <dl id="leadFields" class="lead-fields">
+                <div class="placeholder">Collecting your requirements...</div>
+            </dl>
+        </aside>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/livekit-client@2/dist/livekit-client.umd.min.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>

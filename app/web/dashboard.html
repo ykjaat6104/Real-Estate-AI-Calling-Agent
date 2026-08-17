@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leads Dashboard — Real Estate AI Agent</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <span class="logo">📋</span>
+            <div>
+                <h1>Leads Dashboard</h1>
+                <p class="subtitle">Captured by the AI sales agent</p>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="/">← Back to demo</a>
+            <button id="logoutBtn" class="btn small ghost">Logout</button>
+        </nav>
+    </header>
+
+    <div class="dashboard-wrap">
+        <!-- Analytics Cards -->
+        <div class="analytics-grid">
+            <div class="analytics-card">
+                <h3>Total Leads</h3>
+                <div class="value" id="statTotal">0</div>
+            </div>
+            <div class="analytics-card">
+                <h3>Qualified</h3>
+                <div class="value" id="statQualified">0</div>
+            </div>
+            <div class="analytics-card">
+                <h3>Conversion Rate</h3>
+                <div class="value" id="statConversion">0%</div>
+            </div>
+            <div class="analytics-card">
+                <h3>Hot Leads</h3>
+                <div class="value" id="statHot">0</div>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <h2>All calls</h2>
+            <div class="toolbar-actions">
+                <select id="statusFilter" class="filter-select">
+                    <option value="">All Status</option>
+                    <option value="qualified">Qualified</option>
+                    <option value="in_progress">In Progress</option>
+                    <option value="unqualified">Unqualified</option>
+                </select>
+                <button id="exportBtn" class="btn ghost small">Export CSV</button>
+            </div>
+        </div>
+
+        <table id="leadTable">
+            <thead>
+                <tr>
+                    <th>#</th><th>Time</th><th>Status</th><th>Name</th><th>Phone</th>
+                    <th>Purpose</th><th>Config</th><th>Location</th><th>Budget</th><th>Timeline</th>
+                </tr>
+            </thead>
+            <tbody><tr><td colspan="10" class="empty">No leads yet. Start a call from the demo page.</td></tr></tbody>
+        </table>
+    </div>
+
+    <div class="modal-backdrop" id="modal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">✕</button>
+            <h3 id="modalTitle">Lead details</h3>
+            <div class="grid" id="modalGrid"></div>
+            <pre id="modalSummary"></pre>
+            <pre id="modalTranscript"></pre>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
